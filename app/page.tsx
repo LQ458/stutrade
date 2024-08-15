@@ -1,113 +1,241 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
+"use client";
+import { useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function Home() {
+  useEffect(() => {
+    import("bootstrap");
+  }, []);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+    <div>
+      {/* Navigation Bar */}
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="/">
+            Second Handle Market
           </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link" href="/login">
+                  <i className="bi bi-box-arrow-in-right"></i> Login
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/register">
+                  <i className="bi bi-person-plus"></i> Register
+                </a>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown
+                </a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Action
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Another action
+                    </a>
+                  </li>
+                  <li>
+                    <hr className="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Something else here
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <form className="d-flex" role="search">
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button className="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
+      </nav>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      {/* Main Content Area */}
+      <main className="container mt-5">
+        <div className="row">
+          <div className="col-md-6 mb-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Initiate Trade</h5>
+                <p className="card-text">
+                  Post your second-hand items to start trading.
+                </p>
+                <a href="#" className="btn btn-primary">
+                  Initiate Trade
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6 mb-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Accept Trade</h5>
+                <p className="card-text">
+                  Browse and accept trades posted by others.
+                </p>
+                <a href="#" className="btn btn-success">
+                  Accept Trade
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        {/* Featured Items */}
+        <div className="row mt-5">
+          <div className="col-12">
+            <h3>Featured Items</h3>
+          </div>
+          <div className="col-md-4 mb-4">
+            <div className="card">
+              <img src="item1.jpg" className="card-img-top" alt="Item 1" />
+              <div className="card-body">
+                <h5 className="card-title">Item 1</h5>
+                <p className="card-text">Description of item 1.</p>
+                <a href="#" className="btn btn-info">
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 mb-4">
+            <div className="card">
+              <img src="item2.jpg" className="card-img-top" alt="Item 2" />
+              <div className="card-body">
+                <h5 className="card-title">Item 2</h5>
+                <p className="card-text">Description of item 2.</p>
+                <a href="#" className="btn btn-info">
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 mb-4">
+            <div className="card">
+              <img src="item3.jpg" className="card-img-top" alt="Item 3" />
+              <div className="card-body">
+                <h5 className="card-title">Item 3</h5>
+                <p className="card-text">Description of item 3.</p>
+                <a href="#" className="btn btn-info">
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        {/* Recent Transactions */}
+        <div className="row mt-5">
+          <div className="col-12">
+            <h3>Recent Transactions</h3>
+          </div>
+          <div className="col-md-6 mb-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Transaction 1</h5>
+                <p className="card-text">Details of transaction 1.</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6 mb-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Transaction 2</h5>
+                <p className="card-text">Details of transaction 2.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      {/* Footer */}
+      <footer className="bg-light text-center text-lg-start mt-5">
+        <div className="container p-4">
+          <div className="row">
+            <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
+              <h5 className="text-uppercase">Second Hand Trading Platform</h5>
+              <p>
+                Your go-to platform for trading second-hand items. Safe, secure,
+                and easy to use.
+              </p>
+            </div>
+            <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 className="text-uppercase">Links</h5>
+              <ul className="list-unstyled mb-0">
+                <li>
+                  <a href="#" className="text-dark">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-dark">
+                    Initiate Trade
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-dark">
+                    Accept Trade
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 className="text-uppercase">Contact</h5>
+              <ul className="list-unstyled mb-0">
+                <li>
+                  <a href="#" className="text-dark">
+                    Email: support@tradingplatform.com
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-dark">
+                    Phone: +123 456 7890
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="text-center p-3 bg-dark text-white">
+          © 2023 Second Hand Trading Platform
+        </div>
+      </footer>
+    </div>
   );
 }

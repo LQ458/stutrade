@@ -24,7 +24,11 @@ export async function POST(req: NextRequest) {
       originalPassword: password,
       admin: false,
     });
-    const { password: _, originalPassword: __, ...userWithoutPassword } = user.toObject();
+    const {
+      password: _,
+      originalPassword: __,
+      ...userWithoutPassword
+    } = user.toObject();
 
     return NextResponse.json(
       { message: "User created successfully", user: userWithoutPassword },
