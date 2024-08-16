@@ -269,7 +269,7 @@ export default function Home() {
                   <span className="font-weight-bold">
                     Total: ${total.toFixed(2)}
                   </span>
-                  <a href="#" className="btn btn-primary">
+                  <a href="#" className="btn btn-success">
                     Checkout
                   </a>
                 </div>
