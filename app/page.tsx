@@ -171,17 +171,17 @@ export default function Home() {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Dropdown
+                  Dashboard
                 </a>
                 <ul className="dropdown-menu">
                   <li>
                     <a className="dropdown-item" href="#">
-                      Action
+                      Orders
                     </a>
                   </li>
                   <li>
                     <a className="dropdown-item" href="#">
-                      Another action
+                      Transactions
                     </a>
                   </li>
                   <li>
@@ -189,7 +189,7 @@ export default function Home() {
                   </li>
                   <li>
                     <a className="dropdown-item" href="#">
-                      Something else here
+                      My Discounts
                     </a>
                   </li>
                 </ul>
